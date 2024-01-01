@@ -11,8 +11,8 @@ let resourceSets = ["example"]
 
 // MARK: - Direct Declaration
 // Invoke using direct declarations
-//var day01 = AdventOfCode2023.Day01(datasets: resourceSets, algorithms: [.part01])
-//day01.execute()
+var day01 = AdventOfCode2023.Day01(datasets: resourceSets, algorithms: [.part01])
+day01.execute()
 
 //var day02 = AdventOfCode2023.Day02(datasets: resourceSets, algorithms: [.part01, .part02])
 //day02.execute()
@@ -71,6 +71,6 @@ let resourceSets = ["example"]
 //var day23 = AdventOfCode2023.Day23(datasets: resourceSets, algorithms: [.part01, .part02])
 //day23.execute()
 
-var day24 = AdventOfCode2023.Day24(datasets: resourceSets, algorithms: [.part01, .part02])
-day24.execute()
+//var day24 = AdventOfCode2023.Day24(datasets: resourceSets, algorithms: [.part01, .part02])
+//day24.execute()
 
