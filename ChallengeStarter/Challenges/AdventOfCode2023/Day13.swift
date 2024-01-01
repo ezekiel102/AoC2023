@@ -58,7 +58,6 @@ extension AdventOfCode2023 {
         // MARK: - Logic Methods
         func part01(_ depths: Input) -> Output {
             var result = 0
-//            print(depths)
             
             for j in 0..<depths.count {
                 for line in depths[j] {
@@ -67,7 +66,6 @@ extension AdventOfCode2023 {
                 for i in 0..<depths[j].count - 1 {
                     print("lines", i, "i", checkLines(depths[j], i + 1))
                     if checkLines(depths[j], i + 1) != 0 && (checkLines(depths[j], i + 1) == i + 1 || checkLines(depths[j], i + 1) == depths[j].count - i - 1)  {
-//                        print(i, "i", checkLines(depths[j], i + 1))
                         result += (i + 1) * 100
                         print((i + 1) * 100)
                     }
@@ -80,60 +78,7 @@ extension AdventOfCode2023 {
                         print(i + 1)
                     }
                 }
-//                if maxLines[j].0 == 0 {
-//                    maxLines[j].1 = 0
-//                }
-//                if maxColumn[j].0 == 0 {
-//                    maxColumn[j].1 = 0
-//                }
             }
-            
-//            var maxLines: [(Int, Int)] = []
-//            var maxColumn: [(Int, Int)] = []
-//            for _ in depths {
-//                maxLines.append((0, 0))
-//                maxColumn.append((0, 0))
-//            }
-//
-//            for j in 0..<depths.count {
-//                for i in 0..<depths[j].count {
-//                    if checkLines(depths[j], i + 1) > maxLines[j].0 {
-//                        let a = checkLines(depths[j], i + 1)
-//                        let b = i + 1
-//                        maxLines[j] = (a, b)
-//                    }
-//                }
-//                for i in 0..<depths[j][0].count {
-//                    if checkColumns(depths[j], i + 1) >
-//                        maxColumn[j].0 {
-//                        let a = checkColumns(depths[j], i + 1)
-//                        let b = i + 1
-//                        maxColumn[j] = (a, b)
-//                    }
-//                }
-//                if maxLines[j].0 == 0 {
-//                    maxLines[j].1 = 0
-//                }
-//                if maxColumn[j].0 == 0 {
-//                    maxColumn[j].1 = 0
-//                }
-//            }
-//
-//            for i in 0..<depths.count {
-//                if maxLines[i].0 >= maxColumn[i].0 {
-//                    result += maxLines[i].1 * 100
-//                    for j in depths[i] {
-//                        print(j)
-//                    }
-//                    print("line", maxLines[i].1 * 100)
-//                } else {
-//                    result += maxColumn[i].1
-//                    for j in depths[i] {
-//                        print(j)
-//                    }
-//                    print("column", maxColumn[i].1)
-//                }
-//            }
             return result
         }
         
@@ -155,7 +100,6 @@ extension AdventOfCode2023 {
                 if strings[number - 1 - i] == strings[number + i] {
                     result += 1
                 } else if result == 0 {
-                    //break
                 }
             }
             return result
@@ -180,10 +124,3 @@ extension AdventOfCode2023 {
         }
     }
 }
-
-//30116
-//33116
-//33149
-//32281
-
-//32371?

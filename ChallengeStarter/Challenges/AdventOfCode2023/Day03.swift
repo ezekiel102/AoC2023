@@ -113,8 +113,6 @@ extension AdventOfCode2023 {
                 } else if numbersSet.contains(depths[1][i]) && tempNumberString != "" && i == m - 1 {
                     tempNumberString.append(String(depths[1][i]))
                     iEnd = i
-//                    print("konec", tempNumberString)
-//                    print("iStart", iStart, "iEnd", iEnd, depths[1][iEnd])
                     if control.contains(depths[1][iStart]) || control.contains(depths[1][iEnd]) {
                         testSymbols += 1
                     }
@@ -123,7 +121,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-//                    print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -134,7 +131,6 @@ extension AdventOfCode2023 {
                     tempNumberString.append(String(depths[0][i]))
                 } else if !numbersSet.contains(depths[0][i]) && tempNumberString != "" {
                     iEnd = i
-                    //print("temp", tempNumberString)
                     if control.contains(depths[0][iStart]) || control.contains(depths[0][iEnd]) {
                         testSymbols += 1
                     }
@@ -143,7 +139,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-                    //print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -152,7 +147,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-            //print("first", result)
             return result
         }
         func lastLine(_ depths: [ [String]], _ control: [String], _ m: Int) -> Int {
@@ -168,8 +162,6 @@ extension AdventOfCode2023 {
                 } else if numbersSet.contains(depths[1][i]) && tempNumberString != "" && i == m - 1 {
                     tempNumberString.append(String(depths[1][i]))
                     iEnd = i
-//                    print("konec", tempNumberString)
-//                    print("iStart", iStart, "iEnd", iEnd, depths[1][iEnd])
                     if control.contains(depths[1][iStart]) || control.contains(depths[1][iEnd]) {
                         testSymbols += 1
                     }
@@ -178,7 +170,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-//                    print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -189,7 +180,6 @@ extension AdventOfCode2023 {
                     tempNumberString.append(String(depths[1][i]))
                 } else if !numbersSet.contains(depths[1][i]) && tempNumberString != "" {
                     iEnd = i
-                    //print("temp", tempNumberString)
                     if control.contains(depths[1][iStart]) || control.contains(depths[1][iEnd]) {
                         testSymbols += 1
                     }
@@ -198,7 +188,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-                    //print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -207,7 +196,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-            //print("last", result)
             return result
         }
         func middleLine(_ depths: [ [String]], _ control: [String], _ m: Int) -> Int {
@@ -220,12 +208,9 @@ extension AdventOfCode2023 {
                 if numbersSet.contains(depths[1][i]) && tempNumberString == "" {
                     iStart = i > 1 ? i - 1 : 0
                     tempNumberString.append(String(depths[1][i]))
-//                    print(tempNumberString)
                 } else if numbersSet.contains(depths[1][i]) && tempNumberString != "" && i == m - 1 {
                     tempNumberString.append(String(depths[1][i]))
                     iEnd = i
-//                    print("konec", tempNumberString)
-//                    print("iStart", iStart, "iEnd", iEnd, depths[1][iEnd])
                     if control.contains(depths[1][iStart]) || control.contains(depths[1][iEnd]) {
                         testSymbols += 1
                     }
@@ -239,7 +224,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-//                    print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -248,11 +232,8 @@ extension AdventOfCode2023 {
                     }
                 } else if numbersSet.contains(depths[1][i]) && tempNumberString != "" {
                     tempNumberString.append(String(depths[1][i]))
-//                    print(tempNumberString)
                 } else if !numbersSet.contains(depths[1][i]) && tempNumberString != "" {
                     iEnd = i
-//                    print("temp", tempNumberString)
-//                    print("iStart", iStart, "iEnd", iEnd, depths[1][iEnd])
                     if control.contains(depths[1][iStart]) || control.contains(depths[1][iEnd]) {
                         testSymbols += 1
                     }
@@ -266,7 +247,6 @@ extension AdventOfCode2023 {
                             testSymbols += 1
                         }
                     }
-//                    print("test", testSymbols)
                     if testSymbols > 0 {
                         result += Int(tempNumberString)!
                         tempNumberString = ""; iStart = 0; iEnd = 0; testSymbols = 0
@@ -276,7 +256,6 @@ extension AdventOfCode2023 {
                 }
             }
             
-//            print("middle", result)
             return result
         }
         

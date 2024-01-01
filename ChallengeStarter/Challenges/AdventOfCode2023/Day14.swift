@@ -57,9 +57,6 @@ extension AdventOfCode2023 {
         
         func part02(_ depths: Input) -> Output {
             var rocks = readInput(depths)
-//            for rock in rocks {
-//                print(rock)
-//            }
             var k = 0
             fullCycle(&rocks)
             k += 1
@@ -75,30 +72,7 @@ extension AdventOfCode2023 {
                 k += 1
                 print(resultRocks(rocks), k)
             }
-//            fullCycle(&rocks)
-//            k += 1
-//            fullCycle(&rocks)
-//            k += 1
-//            fullCycle(&rocks)
-//            k += 1
-//            fullCycle(&rocks)
-//            k += 1
-//            var etalonRocks = rocks
-//            print(resultRocks(etalonRocks))
-//            fullCycle(&rocks)
-//            k += 1
-//            while resultRocks(rocks) != resultRocks(etalonRocks) || k == 10 || k == 11 || k == 18 || k == 17 {
-//                fullCycle(&rocks)
-//                k += 1
-//                print(resultRocks(rocks))
-//
-//                print(k)
-//            }
-//            print("k", k)
-//            for rock in rocks {
-//                print(rock)
-//            }
-            return 64 //resultRocks(rocks)
+            return 64
         }
         
         func readInput(_ depths: Input) -> [[Character]] {
@@ -110,7 +84,6 @@ extension AdventOfCode2023 {
         }
         
         func moveRockN(_ depths: inout [[Character]]) {
-//            print("rocks North")
             for i in 1..<depths.count {
                 for j in 0..<depths[i].count {
                     if depths[i][j] == "O" {
@@ -123,13 +96,9 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for rock in depths {
-//                print(rock)
-//            }
         }
         
         func moveRockS(_ depths: inout [[Character]]) {
-//            print("rocks South")
             for i in (0..<depths.count - 1).reversed() {
                 for j in (0..<depths[i].count).reversed() {
                     if depths[i][j] == "O" {
@@ -142,13 +111,9 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for rock in depths {
-//                print(rock)
-//            }
         }
         
         func moveRockW(_ depths: inout [[Character]]) {
-//            print("rocks West")
             for i in 0..<depths.count {
                 for j in 1..<depths[i].count {
                     if depths[i][j] == "O" {
@@ -161,13 +126,9 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for rock in depths {
-//                print(rock)
-//            }
         }
         
         func moveRockE(_ depths: inout [[Character]]) {
-//            print("rocks East")
             for i in (0..<depths.count).reversed() {
                 for j in (0..<depths[i].count - 1).reversed() {
                     if depths[i][j] == "O" {
@@ -180,13 +141,9 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for rock in depths {
-//                print(rock)
-//            }
         }
         
         func fullCycle(_ depths: inout [[Character]]) {
-//            print("hell yeah")
             moveRockN(&depths)
             moveRockW(&depths)
             moveRockS(&depths)
@@ -207,5 +164,3 @@ extension AdventOfCode2023 {
         }
     }
 }
-
-//102756

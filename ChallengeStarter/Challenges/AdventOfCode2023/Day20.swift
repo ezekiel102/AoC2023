@@ -56,8 +56,6 @@ extension AdventOfCode2023 {
                 let stack = insStack.removeFirst()
                 highLow.append("high")
                 print(stack)
-//                let temp = ins[stack]!.0
-//                print(temp[1])
                 let next = 1
             }
             return result

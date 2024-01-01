@@ -105,9 +105,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for line in result {
-//                print(line)
-//            }
             return result
         }
         
@@ -127,9 +124,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for line in result {
-//                print(line)
-//            }
             return result
         }
         
@@ -137,10 +131,6 @@ extension AdventOfCode2023 {
             for i in 1..<bricks.count - 1 {
                 let floor = bricks[i]
                 let previousFloor = bricks[i - 1]
-//                if floor.0.2 > previousFloor.1.2 {
-//                    if [previousFloor.0.0...previousFloor.1.0].contains(floor.0.0) &&
-//                        [previousFloor.0.1...previousFloor.1.1].contains(floor.0.1)
-//                }
             }
         }
         

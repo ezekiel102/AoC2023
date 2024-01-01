@@ -89,8 +89,6 @@ extension AdventOfCode2023 {
         }
         
         func part02(_ depths: Input) -> Output {
-            //var result = 0
-            
             return 0
         }
         

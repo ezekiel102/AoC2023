@@ -50,9 +50,6 @@ extension AdventOfCode2023 {
         func part01(_ depths: Input, _ startPoint: (Int, Int, Int)) -> Output {
             var result = 0
             var m = depths
-//            for line in depths {
-//                print(line)
-//            }
             var i = 0
             var routs: [[(Int, Int, Int)]] = [[startPoint]]
             if depths[0][0] == "/" && routs[0].last!.2 == 1 {
@@ -96,10 +93,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            print("good")
-//            for line in m {
-//                print(line)
-//            }
             return result
         }
         
@@ -152,38 +145,26 @@ extension AdventOfCode2023 {
             }
             
             if depths[pointNext.0][pointNext.1] == "/" && pointNext.2 == 1 {
-//                print(1)
                 pointNext.2 = 2
             } else if depths[pointNext.0][pointNext.1] == "/" && pointNext.2 == 4 {
-//                print(2)
                 pointNext.2 = 3
             } else if depths[pointNext.0][pointNext.1] == "/" && pointNext.2 == 3 {
-//                print(3)
                 pointNext.2 = 4
             } else if depths[pointNext.0][pointNext.1] == "/" && pointNext.2 == 2 {
-//                print(4)
                 pointNext.2 = 1
             } else if depths[pointNext.0][pointNext.1] == "\\" && pointNext.2 == 2 {
-//                print(5)
                 pointNext.2 = 3
             } else if depths[pointNext.0][pointNext.1] == "\\" && pointNext.2 == 1 {
-//                print(6)
                 pointNext.2 = 4
             } else if depths[pointNext.0][pointNext.1] == "\\" && pointNext.2 == 3 {
-//                print(7)
                 pointNext.2 = 2
             } else if depths[pointNext.0][pointNext.1] == "\\" && pointNext.2 == 4 {
-//                print(8)
                 pointNext.2 = 1
             } else if depths[pointNext.0][pointNext.1] == "-" && (pointNext.2 == 1 || pointNext.2 == 3) {
-//                print(9)
                 pointNext.2 = 4
             } else if depths[pointNext.0][pointNext.1] == "|" && (pointNext.2 == 2 || pointNext.2 == 4) {
-//                print(10)
                 pointNext.2 = 1
             }
-//            print(pointNext)
-//            print(rout)
             if rout.contains(where: { $0 == pointNext }) {
                 return false
             }
@@ -208,42 +189,26 @@ extension AdventOfCode2023 {
             } else if beam[n].last!.2 == 4 {
                 beam[n].append((beam[n].last!.0, beam[n].last!.1 - 1, beam[n].last!.2))
             }
-            
-//            for line in beam {
-//                print("nextP", line)
-//            }
-            
-//            print("p",depths[beam[n].last!.0][beam[n].last!.1], beam[n].last!)
             let p = depths[beam[n].last!.0][beam[n].last!.1]
             
             if p == "/" && beam[n].last!.2 == 1 {
-//                print(1)
                 beam[n][beam[n].count - 1].2 = 2
             } else if p == "/" && beam[n].last!.2 == 4 {
-//                print(2)
                 beam[n][beam[n].count - 1].2 = 3
             } else if p == "/" && beam[n].last!.2 == 3 {
-//                print(3)
                 beam[n][beam[n].count - 1].2 = 4
             } else if p == "/" && beam[n].last!.2 == 2 {
-//                print(4)
                 beam[n][beam[n].count - 1].2 = 1
             } else if p == "\\" && beam[n].last!.2 == 2 {
-//                print(5)
                 beam[n][beam[n].count - 1].2 = 3
             } else if p == "\\" && beam[n].last!.2 == 1 {
-//                print(6)
                 beam[n][beam[n].count - 1].2 = 4
             } else if p == "\\" && beam[n].last!.2 == 3 {
-//                print(7)
                 beam[n][beam[n].count - 1].2 = 2
             } else if p == "\\" && beam[n].last!.2 == 4 {
-//                print(8)
                 beam[n][beam[n].count - 1].2 = 1
             } else if p == "-" && (beam[n].last!.2 == 1 || beam[n].last!.2 == 3) {
-//                print(9)
                 beam[n][beam[n].count - 1].2 = 4
-//                beam.append([(beam[n].last!.0, beam[n].last!.1, 2)])
                 if !beam.contains(where: { $0[0] == (beam[n].last!.0, beam[n].last!.1, 2) }) {
                     beam.append([(beam[n].last!.0, beam[n].last!.1, 2)])
                 }
@@ -251,9 +216,7 @@ extension AdventOfCode2023 {
                     beam.append([(beam[n].last!.0, beam[n].last!.1, 4)])
                 }
             } else if p == "|" && (beam[n].last!.2 == 2 || beam[n].last!.2 == 4) {
-//                print(10)
                 beam[n][beam[n].count - 1].2 = 1
-//                beam.append([(beam[n].last!.0, beam[n].last!.1, 3)])
                 if !beam.contains(where: { $0[0] == (beam[n].last!.0, beam[n].last!.1, 3) }) {
                     beam.append([(beam[n].last!.0, beam[n].last!.1, 3)])
                 }
@@ -261,17 +224,6 @@ extension AdventOfCode2023 {
                     beam.append([(beam[n].last!.0, beam[n].last!.1, 1)])
                 }
             }
-            
-//            print("ch",depths[beam[n].last!.0][beam[n].last!.1], beam[n].last!)
-            
-//            for line in beam {
-//                print("nextCh", line)
-//            }
-            
         }
     }
 }
-
-//2351
-//7307
-//7429

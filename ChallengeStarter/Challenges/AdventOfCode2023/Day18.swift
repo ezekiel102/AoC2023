@@ -46,13 +46,6 @@ extension AdventOfCode2023 {
         func part01(_ depths: Input) -> Output {
             var result = 0
             var input: [[String]] = []
-//            for line in depths {
-//                var dir = line.components(separatedBy: .whitespaces)[2].removeLast()
-//                dir.removeFirst()
-//                let move = dir
-//                input.append(line.components(separatedBy: .whitespaces) +  + deci)
-//
-//            }
             for line in input {
                 print(line)
             }
@@ -70,48 +63,39 @@ extension AdventOfCode2023 {
             output[point.0][point.1] = "#"
             for line in input {
                 if line[0] == "R" {
-//                    print(point,Int(line[1])!)
                     for j in 1...Int(line[1])! {
                         output[point.0][point.1 + j] = "#"
                     }
                     point = (point.0,point.1 + Int(line[1])!)
                 }
                 if line[0] == "L" {
-                    //print(point)
                     for j in 1...Int(line[1])! {
                         output[point.0][point.1 - j] = "#"
                     }
                     point = (point.0,point.1 - Int(line[1])!)
                 }
                 if line[0] == "U" {
-//                    print(point, Int(line[1])!)
                     for j in 1...Int(line[1])! {
                         output[point.0 - j][point.1] = "#"
                     }
                     point = (point.0 - Int(line[1])!,point.1)
                 }
                 if line[0] == "D" {
-                    //print(point)
                     for j in 1...Int(line[1])! {
                         output[point.0 + j][point.1] = "#"
                     }
                     point = (point.0 + Int(line[1])!,point.1)
                 }
             }
-//            for line in output {
-//                print(line)
-//            }
             for i in 0...n {
                 var j = 0
                 while output[i][j] != "#" && output[i][j] != "$" && j < m {
                     output[i][j] = "$"
-//                    result += 1
                     j += 1
                 }
                 j = m
                 while output[i][j] != "#" && output[i][j] != "$" && j > -1 {
                     output[i][j] = "$"
-//                    result += 1
                     j -= 1
                 }
             }
@@ -119,13 +103,11 @@ extension AdventOfCode2023 {
                 var i = 0
                 while output[i][j] != "#" && output[i][j] != "$" && i < n {
                     output[i][j] = "$"
-//                    result += 1
                     i += 1
                 }
                 i = n
                 while output[i][j] != "#" && output[i][j] != "$" && i > -1 {
                     output[i][j] = "$"
-//                    result += 1
                     i -= 1
                 }
             }
@@ -145,10 +127,7 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for line in output {
-//                print(line)
-//            }
-            return result //(m+1)*(n+1)-result
+            return result
             
         }
         
@@ -221,5 +200,3 @@ extension AdventOfCode2023 {
         }
     }
 }
-
-//34229

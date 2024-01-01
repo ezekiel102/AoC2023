@@ -93,19 +93,12 @@ extension AdventOfCode2023 {
         
         func cross(_ beam1: ((Double, Double, Double), (Double, Double, Double)),
                     _ beam2: ((Double, Double, Double), (Double, Double, Double)) ) -> (Double, Double) {
-//            print(beam1, beam2)
             let t211 = Double(beam1.1.1) * (beam2.0.0 - beam1.0.0)
-//            print(t211, Double(beam1.1.0), t211 / Double(beam1.1.0))
             let t21 = beam2.0.1 - beam1.0.1 - t211 / Double(beam1.1.0)
-//            print(t21)
             let t22 = (beam1.1.1 * beam2.1.0 / beam1.1.0 - beam2.1.1)
-//            print(t22)
             let t2 = t21 / Double(t22)
-//            print(t2)
             let t11 = Double(beam2.1.0) * t2
-//            print(t11)
             let t1 = (t11 + beam2.0.0 - beam1.0.0) / Double(beam1.1.0)
-//            print(t1)
             return (t1, t2)
         }
         
@@ -134,14 +127,5 @@ extension AdventOfCode2023 {
             }
             return beams
         }
-        
-//        func intTime(_ beam: ((Int64, Int64, Int64), (Int64, Int64, Int64))) -> Int {
-//            var time: Int = 0
-//            for i in 1...10000000 {
-//                let x:Double = beam.0.0 + beam.1.0 * Int64(i)
-//                print(x)
-//            }
-//            return 0
-//        }
     }
 }

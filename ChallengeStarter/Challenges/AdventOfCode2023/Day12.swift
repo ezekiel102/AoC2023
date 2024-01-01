@@ -54,7 +54,6 @@ extension AdventOfCode2023 {
         // MARK: - Logic Methods
         func part01(_ depths: Input) -> Output {
             for i in depths {
-                var massiveR: [String] = []
                 let initString = rLine(i).0
                 print(initString)
                 var count = 0
@@ -63,13 +62,9 @@ extension AdventOfCode2023 {
                         count += 1
                     }
                 }
-                var combi = Int(pow(Double(2.0), Double(count)))
+                let combi = Int(pow(Double(2.0), Double(count)))
                 print(combi)
                 while combi != 1 {
-                    for i in 0...(combi / 2) {
-//                        massiveR.append[String("#")]
-                    }
-                    
                     
                 }
                 print(check(rLine(i).0, rLine(i).1))

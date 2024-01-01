@@ -80,7 +80,6 @@ extension AdventOfCode2023 {
                 for i in [0, 2, 4, 6, 8] {
                     for k in inputNums[i]...inputNums[i + 1] {
                         minimumTemp = k
-//                        print(k)
                         for i in 1..<depths.count {
                             let tempNums = arrayNumbers(depths[i])
                             for j in 0..<tempNums.count {
@@ -128,10 +127,8 @@ extension AdventOfCode2023 {
         func arrayNumbers(_ string: String) -> [[Int64]] {
             var inStrings: [String] = []
             var imnNums: [[Int64]] = []
-//            print("string", string)
             inStrings = string.components(separatedBy: ":")[1].components(separatedBy: "\n")
             inStrings.removeFirst()
-//            print("instring", inStrings)
             for i in 0..<inStrings.count {
                 if inStrings[i] == "" {
                     break

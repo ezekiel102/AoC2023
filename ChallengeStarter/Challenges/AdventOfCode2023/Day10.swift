@@ -72,19 +72,16 @@ extension AdventOfCode2023 {
                 if poses.count == 2 && poses[0] == previousPosition  {
                     nextPosition = poses[1]
                     previousPosition = currentPosition
-//                    depths[previousPosition.0][previousPosition.1] = "*"
                     currentPosition = nextPosition
                     steps += 1
                 } else if poses.count == 2 {
                     nextPosition = poses[0]
                     previousPosition = currentPosition
-//                    depths[previousPosition.0][previousPosition.1] = "*"
                     currentPosition = nextPosition
                     steps += 1
                 } else if poses.count == 1 {
                     nextPosition = poses[0]
                     previousPosition = currentPosition
-//                    depths[previousPosition.0][previousPosition.1] = "*"
                     currentPosition = nextPosition
                     steps += 1
                 }
@@ -93,9 +90,6 @@ extension AdventOfCode2023 {
                 }
                 print(steps, currentPosition)
             }
-//            for i in depths {
-//                print(i)
-//            }
             return steps / 2
         }
         
@@ -105,13 +99,7 @@ extension AdventOfCode2023 {
             
             var result = 0
             var depths = depthsIN
-            
-//            for i in depths {
-//                print(i)
-//            }
-            
             let start = startPosition(depths)
-//            print("start", start)
             var previousPosition = (0,0)
             var currentPosition = start
             var nextPosition = (0,0)
@@ -136,9 +124,6 @@ extension AdventOfCode2023 {
                     depths[previousPosition.0][previousPosition.1] = "*"
                     currentPosition = nextPosition
                 }
-//                for i in depths {
-//                    print(i)
-//                }
             }
             var ggg: [Character] = []
             for _ in 0..<(depths[0].count * 2) {
@@ -161,9 +146,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for i in depths2 {
-//                print(i)
-//            }
             for i in 0..<depths.count {
                 for j in 0..<depths[0].count {
                     if depths[i][j] == "*" {
@@ -171,10 +153,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            print(2)
-//            for i in depths2 {
-//                print(i)
-//            }
             for i in 0..<depths2.count {
                 var j = 0
                 while !["*", "$","S"].contains(depths2[i][j]) {
@@ -211,7 +189,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-            //print("g")
             var result1 = 0, result2 = 1
             for i in 0..<depths2.count {
                 for j in 0..<depths2[0].count {
@@ -220,10 +197,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for i in depths2 {
-//                    print(i)
-//                }
-            print(result1)
             while result2 != 4 {
                 result1 = result2
                 result2 = 0
@@ -279,9 +252,6 @@ extension AdventOfCode2023 {
                     }
                 }
             }
-//            for i in depths2 {
-//                print(i)
-//            }
             return result
         }
         
@@ -298,35 +268,22 @@ extension AdventOfCode2023 {
         
         func nextPositions(_ depths: [[Character]], _ current: (Int, Int)) -> [(Int, Int)] {
             var near: [(Int, Int)] = []
-//            print("cur", current)
             let aT = current.0 == 0 ? 0 : current.0 - 1
             let aB = current.0 == depths.count - 1 ? current.0 : current.0 + 1
             let aL = current.1 == 0 ? 0 : current.1 - 1
             let aR = current.1 == depths[current.0].count - 1 ? current.1 : current.1 + 1
-//            for i in aT...aB {
-//                print(depths[i][aL...aR])
-//            }
-//            print(aT, "aT", depths[aT][current.1])
-//            print(aB, "aB", depths[aB][current.1])
-//            print(aL, "aL", depths[current.0][aL])
-//            print(aR, "aR", depths[current.0][aR])
             if ["|","F","7","S"].contains(depths[aT][current.1]) && ["|","L","S","J"].contains(depths[current.0][current.1]) && aT != current.0 {
                 near.append((aT, current.1))
-//                print(1)
             }
             if ["|","L","J","S"].contains(depths[aB][current.1]) && ["|","F","S","7"].contains(depths[current.0][current.1]) && aB != current.0 {
                 near.append((aB, current.1))
-//                print(2)
             }
             if ["-","L","F","S"].contains(depths[current.0][aL]) && ["-","J","S","7"].contains(depths[current.0][current.1]) && aL != current.1 {
                 near.append((current.0, aL))
-//                print(3)
             }
             if ["-","J","7","S"].contains(depths[current.0][aR]) && ["-","F","S","L"].contains(depths[current.0][current.1]) && aR != current.1 {
                 near.append((current.0, aR))
-//                print(4)
             }
-//            print(near)
             return near
         }
         

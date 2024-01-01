@@ -58,17 +58,7 @@ extension AdventOfCode2023 {
         // MARK: - Logic Methods
         func part01(_ inp: Input) -> Output {
             var depths = inp
-//            print(newLines(inp))
-//            print(newColomns(inp))
-//            print(galaxies(inp))
             inserting(&depths)
-//            var increases: [(Int, Int)] = galaxies(depths)
-//            print(increases)
-//            for str in depths {
-//                print(str)
-//            }
-//            print(findResult(galaxies(depths)))
-//            print()
             return findResult(galaxies(depths))
         }
         
@@ -202,5 +192,3 @@ extension AdventOfCode2023 {
         }
     }
 }
-
-//9312968

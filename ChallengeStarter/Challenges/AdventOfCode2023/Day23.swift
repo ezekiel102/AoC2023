@@ -121,17 +121,6 @@ extension AdventOfCode2023 {
                 return [(point.0, point.1), (point.0, point.1 + 1), (point.0, point.1 + 2)]
             }
             return nil
-//            var road: [(Int, Int)] = []
-//            for i in 1..<depths.count - 1 {
-//                for j in 1..<depths[i].count - 1 {
-//                    if depths[i][j] == "." && depths[i][j + 1] == ">" && depths[i][j + 2] == "." &&
-//                        (depths[i][j + 3] == "." || depths[i - 1][j + 2] == "." || depths[i + 1][j + 2]  == ".") {
-//                        road += [(i, j), (i, j + 1), (i, j + 2)]
-//                    }
-//                }
-//            }
-//            print(road)
-//            return road
         }
         
         func downRoad(_ depths: [[Character]], point: (Int, Int)) -> [(Int, Int)]? {
@@ -144,17 +133,6 @@ extension AdventOfCode2023 {
                 return [(point.0, point.1), (point.0 + 1, point.1), (point.0 + 2, point.1)]
             }
             return nil
-//            var road: [(Int, Int)] = []
-//            for i in 1..<depths.count - 1 {
-//                for j in 1..<depths[i].count - 1 {
-//                    if depths[i][j] == "." && depths[i + 1][j] == "v" && depths[i + 2][j] == "." &&
-//                        (depths[i + 2][j - 1] == "." || depths[i + 3][j] == "." || depths[i + 2][j + 1]  == ".") {
-//                        road += [(i, j), (i + 1, j), (i + 2, j)]
-//                    }
-//                }
-//            }
-//            print(road)
-//            return road
         }
         
         func checkEndRoad(_ depths: [[Character]], point: (Int, Int)) -> [(Int, Int)]? {
@@ -180,19 +158,15 @@ extension AdventOfCode2023 {
             let aR = current.1 == depths[current.0].count - 1 ? current.1 : current.1 + 1
             
             if depths[current.0][aL] == "." && !road.contains(where: { $0 == (current.0, aL) }) {
-//                print(1)
                 return (current.0, aL)
             }
             if depths[current.0][aR] == "." && !road.contains(where: { $0 == (current.0, aR) }) {
-//                print(2)
                 return (current.0, aR)
             }
             if depths[aT][current.1] == "." && !road.contains(where: { $0 == (aT, current.1) }) {
-//                print(3)
                 return (aT, current.1)
             }
             if depths[aB][current.1] == "." && !road.contains(where: { $0 == (aB, current.1) }) {
-//                print(4)
                 return (aB, current.1)
             }
             

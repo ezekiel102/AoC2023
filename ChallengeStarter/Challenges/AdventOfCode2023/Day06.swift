@@ -52,7 +52,6 @@ extension AdventOfCode2023 {
                 }
             }
             let increases = rawOutput?.integerList()[0]
-//            print("all input", depths)
             return (depths, increases)
         }
         
@@ -213,9 +212,6 @@ extension AdventOfCode2023 {
                 }
                 
             }
-//            print("before sorting", diff)
-//            let diffSorted = diff.sorted { $0.key < $1.key }
-//            print("after sorting", diffSorted)
             return diff.sorted { $0.value > $1.value }
         }
         func checkValue(_ ch: String) -> Int {
@@ -263,7 +259,6 @@ extension AdventOfCode2023 {
                     input[0].value += b
                 }
             }
-//            print(diff, input)
             if input[0].value == 5 {
                 return 10000000
             }
