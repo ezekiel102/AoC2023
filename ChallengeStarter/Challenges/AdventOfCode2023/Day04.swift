@@ -55,8 +55,8 @@ extension AdventOfCode2023 {
         func part01(_ depths: Input) -> Output {
             var increases: Int = 0
             for str in depths {
-                var a = str.components(separatedBy: [":","|"])[1].components(separatedBy: " ").compactMap { Int($0) }
-                var b = str.components(separatedBy: [":","|"])[2].components(separatedBy: " ").compactMap { Int($0) }
+                let a = str.components(separatedBy: [":","|"])[1].components(separatedBy: " ").compactMap { Int($0) }
+                let b = str.components(separatedBy: [":","|"])[2].components(separatedBy: " ").compactMap { Int($0) }
                 var inc = 0
                 for i in 0..<a.count {
                     if b.contains(a[i]) && a[i] != 0 {
@@ -79,8 +79,8 @@ extension AdventOfCode2023 {
                 instances.append(1)
             }
             for j in 1...depths.count {
-                var a = depths[j - 1].components(separatedBy: [":","|"])[1].components(separatedBy: " ").compactMap { Int($0) }
-                var b = depths[j - 1].components(separatedBy: [":","|"])[2].components(separatedBy: " ").compactMap { Int($0) }
+                let a = depths[j - 1].components(separatedBy: [":","|"])[1].components(separatedBy: " ").compactMap { Int($0) }
+                let b = depths[j - 1].components(separatedBy: [":","|"])[2].components(separatedBy: " ").compactMap { Int($0) }
                 var inc = 0
                 for i in 0..<a.count {
                     if b.contains(a[i]) && a[i] != 0 {

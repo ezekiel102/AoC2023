@@ -79,12 +79,11 @@ extension AdventOfCode2023 {
                 red: String = "red", redCount: Int = 0,
                 green: String = "green", greenCount: Int = 0,
                 blue: String = "blue", blueCount: Int = 0
-            var separatedString = string.components(separatedBy: ":")
+            let separatedString = string.components(separatedBy: ":")
             gameN = Int(separatedString[0].components(separatedBy: " ")[1])!
-            var games = separatedString[1].components(separatedBy: ";")
+            let games = separatedString[1].components(separatedBy: ";")
             for game in games {
-                var gamesNN = game.components(separatedBy: " ")
-                var i = 0
+                let gamesNN = game.components(separatedBy: " ")
                 for i in 0..<gamesNN.count {
                     if gamesNN[i].contains("red") {
                         redCount = max(Int(gamesNN[i - 1])!, redCount)
@@ -105,12 +104,11 @@ extension AdventOfCode2023 {
                 red: String = "red", redCount: Int = 0,
                 green: String = "green", greenCount: Int = 0,
                 blue: String = "blue", blueCount: Int = 0
-            var separatedString = string.components(separatedBy: ":")
+            let separatedString = string.components(separatedBy: ":")
             gameN = Int(separatedString[0].components(separatedBy: " ")[1])!
-            var games = separatedString[1].components(separatedBy: ";")
+            let games = separatedString[1].components(separatedBy: ";")
             for game in games {
-                var gamesNN = game.components(separatedBy: " ")
-                var i = 0
+                let gamesNN = game.components(separatedBy: " ")
                 for i in 0..<gamesNN.count {
                     if gamesNN[i].contains("red") {
                         redCount = max(Int(gamesNN[i - 1])!, redCount)
